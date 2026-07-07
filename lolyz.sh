@@ -11,9 +11,10 @@ if [ "$1" = '-s' ] || [ "$1" = "--silent" ]; then
         shift
 fi
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ "$SILENT" = false ]; then
-        cat /home/$USER/logo/ASCII   # fix in install.script
-        echo   "LOL:YZ (Lord of the Lollies: Year Zero) - Rapid, Reproducible Reconnaissance."
+cat "$SCRIPT_DIR/logo/logo"
+	echo   "LOL:YZ (Lord of the Lollies: Year Zero) - Rapid, Reproducible Reconnaissance."
         echo -e "Bear in mind: this tool doesn't provide any extra/unique ways of scanning!"
         echo   "Used Solutions: Nmap, Ffuf, Nikto. Used lists were taken from the Seclist... "
         echo -e "-------------------------------------------------------------------------------\n"
